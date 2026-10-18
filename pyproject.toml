@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vllm-hust-prefill-microflow"
+version = "0.1.0.dev0"
+description = "Experimental independent ECPA Qwen3.5 BF16 TP2 prefill Microflow bundle"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0 AND MIT AND BSD-3-Clause AND LicenseRef-CANN-1.0 AND LicenseRef-CANN-2.0"
+license-files = ["LICENSE", "licenses/*.txt", "licenses/*.md"]
+authors = [{name = "vLLM-HUST / jingyuan (CubeLander)"}]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/vLLM-HUST/vllm-hust-prefill-microflow"
+Source = "https://github.com/vLLM-HUST/BetterScale/tree/lumi/cache-transfer-profile"
+
+[project.entry-points."vllm_hust.extension_bundles"]
+"org.vllm-hust.prefill-microflow" = "hust_prefill_microflow"
+
+[project.entry-points."vllm.general_plugins"]
+hust_prefill_microflow = "hust_prefill_microflow:register"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+hust_prefill_microflow = ["*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

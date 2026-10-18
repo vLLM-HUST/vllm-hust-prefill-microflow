@@ -1,0 +1,32 @@
+{
+  "alias_prefix": "betterscale.models.qwen35.",
+  "implementation_prefix": "hust_prefill_microflow.runtime.",
+  "modules": [
+    "microflow",
+    "microflow_attention",
+    "microflow_gdn",
+    "microflow_layout",
+    "microflow_native",
+    "microflow_plan",
+    "microflow_preprocess",
+    "microflow_rope",
+    "microflow_streams",
+    "microflow_triangle"
+  ],
+  "native_libraries": [
+    "libbs_microflow_kkt.so",
+    "libbs_microflow_wu.so"
+  ],
+  "cache_variables": {
+    "VLLM_CACHE_ROOT": "vllm",
+    "TRITON_CACHE_DIR": "triton",
+    "TORCHINDUCTOR_CACHE_DIR": "inductor"
+  },
+  "supported_scope": {
+    "model": "Qwen3.5-35B-A3B",
+    "dtype": "BF16",
+    "tensor_parallel_size": 2,
+    "gdn_tokens": 4096,
+    "draft_modified": false
+  }
+}

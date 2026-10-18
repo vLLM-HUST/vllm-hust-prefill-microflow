@@ -1,0 +1,96 @@
+{
+  "schema": "microflow-clean-wheel-cpu-v1",
+  "installed": {
+    "installed_version": "0.1.0.dev0",
+    "static_bundle": "org.vllm-hust.prefill-microflow",
+    "no_runtime_imports": true,
+    "isolated_interpreter": true
+  },
+  "manager_version": "0.3.0",
+  "commands": [
+    {
+      "action": "inspect",
+      "exit_code": 0,
+      "stdout": "{\n  \"activation\": {\n    \"additional_config\": [],\n    \"entry_points\": [\n      {\n        \"group\": \"vllm.general_plugins\",\n        \"name\": \"hust_prefill_microflow\"\n      }\n    ],\n    \"environment\": [\n      [\n        \"BETTERSCALE_PREFILL_MICROFLOW\",\n        \"1\"\n      ],\n      [\n        \"HUST_PREFILL_MICROFLOW_ENABLED\",\n        \"1\"\n      ]\n    ]\n  },\n  \"activation_blocker\": null,\n  \"activation_ready\": true,\n  \"bundle_id\": \"org.vllm-hust.prefill-microflow\",\n  \"bundle_version\": \"0.1.0.dev0\",\n  \"components\": [\n    {\n      \"component_id\": \"vllm-hust-prefill-microflow\",\n      \"contracts\": [\n        \"vllm.general-plugin.experimental\"\n      ],\n      \"execution_planes\": [\n        \"worker\"\n      ],\n      \"implementation_ref\": \"hust_prefill_microflow:register\",\n      \"isolation\": \"trusted_in_process\",\n      \"permissions\": []\n    }\n  ],\n  \"distribution\": \"vllm-hust-prefill-microflow\",\n  \"distribution_version\": \"0.1.0.dev0\",\n  \"enabled\": false,\n  \"experimental\": true,\n  \"host\": {\n    \"api_range\": \">=1,<2\",\n    \"name\": \"vllm\",\n    \"provider\": \"vllm\",\n    \"version_range\": \">=0.25.1,<0.26\"\n  },\n  \"implementation\": [\n    {\n      \"module\": \"hust_prefill_microflow\",\n      \"object\": \"register\",\n      \"status\": \"active\",\n      \"type\": \"python_module\"\n    }\n  ],\n  \"kind\": \"in_process_plugin\",\n  \"lifecycle_owner\": \"vllm\",\n  \"manifest_path\": \"C:\\\\tmp\\\\prefill-microflow-ecpa-venv\\\\Lib\\\\site-packages\\\\hust_prefill_microflow\\\\vllm-hust-extension-v0.3.json\",\n  \"protocols\": [\n    {\n      \"name\": \"vllm.general-plugin\",\n      \"version_range\": null\n    }\n  ],\n  \"requires_extensions\": [],\n  \"requires_services\": [],\n  \"resource_claims\": [\n    {\n      \"mode\": \"exclusive\",\n      \"resource\": \"betterscale.qwen35.prefill-microflow-seam\",\n      \"scope\": \"vllm-process\"\n    },\n    {\n      \"mode\": \"exclusive\",\n      \"resource\": \"vllm.qwen35.fa-prefill-schedule\",\n      \"scope\": \"vllm-process\"\n    },\n    {\n      \"mode\": \"exclusive\",\n      \"resource\": \"vllm.qwen35.gdn-prefill-schedule\",\n      \"scope\": \"vllm-process\"\n    }\n  ],\n  \"runtime\": {\n    \"isolation\": \"trusted_in_process\",\n    \"process_scope\": \"worker\",\n    \"type\": \"python\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "action": "validate",
+      "exit_code": 0,
+      "stdout": "{\n  \"activation\": {\n    \"additional_config\": [],\n    \"entry_points\": [\n      {\n        \"group\": \"vllm.general_plugins\",\n        \"name\": \"hust_prefill_microflow\"\n      }\n    ],\n    \"environment\": [\n      [\n        \"BETTERSCALE_PREFILL_MICROFLOW\",\n        \"1\"\n      ],\n      [\n        \"HUST_PREFILL_MICROFLOW_ENABLED\",\n        \"1\"\n      ]\n    ]\n  },\n  \"activation_blocker\": null,\n  \"activation_ready\": true,\n  \"bundle_id\": \"org.vllm-hust.prefill-microflow\",\n  \"bundle_version\": \"0.1.0.dev0\",\n  \"components\": [\n    {\n      \"component_id\": \"vllm-hust-prefill-microflow\",\n      \"contracts\": [\n        \"vllm.general-plugin.experimental\"\n      ],\n      \"execution_planes\": [\n        \"worker\"\n      ],\n      \"implementation_ref\": \"hust_prefill_microflow:register\",\n      \"isolation\": \"trusted_in_process\",\n      \"permissions\": []\n    }\n  ],\n  \"distribution\": \"vllm-hust-prefill-microflow\",\n  \"distribution_version\": \"0.1.0.dev0\",\n  \"enabled\": false,\n  \"experimental\": true,\n  \"host\": {\n    \"api_range\": \">=1,<2\",\n    \"name\": \"vllm\",\n    \"provider\": \"vllm\",\n    \"version_range\": \">=0.25.1,<0.26\"\n  },\n  \"implementation\": [\n    {\n      \"module\": \"hust_prefill_microflow\",\n      \"object\": \"register\",\n      \"status\": \"active\",\n      \"type\": \"python_module\"\n    }\n  ],\n  \"kind\": \"in_process_plugin\",\n  \"lifecycle_owner\": \"vllm\",\n  \"manifest_path\": \"C:\\\\tmp\\\\prefill-microflow-ecpa-venv\\\\Lib\\\\site-packages\\\\hust_prefill_microflow\\\\vllm-hust-extension-v0.3.json\",\n  \"protocols\": [\n    {\n      \"name\": \"vllm.general-plugin\",\n      \"version_range\": null\n    }\n  ],\n  \"requires_extensions\": [],\n  \"requires_services\": [],\n  \"resource_claims\": [\n    {\n      \"mode\": \"exclusive\",\n      \"resource\": \"betterscale.qwen35.prefill-microflow-seam\",\n      \"scope\": \"vllm-process\"\n    },\n    {\n      \"mode\": \"exclusive\",\n      \"resource\": \"vllm.qwen35.fa-prefill-schedule\",\n      \"scope\": \"vllm-process\"\n    },\n    {\n      \"mode\": \"exclusive\",\n      \"resource\": \"vllm.qwen35.gdn-prefill-schedule\",\n      \"scope\": \"vllm-process\"\n    }\n  ],\n  \"runtime\": {\n    \"isolation\": \"trusted_in_process\",\n    \"process_scope\": \"worker\",\n    \"type\": \"python\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "action": "enable",
+      "exit_code": 0,
+      "stdout": "enabled org.vllm-hust.prefill-microflow\n",
+      "stderr": ""
+    },
+    {
+      "action": "check",
+      "exit_code": 0,
+      "stdout": "{\n  \"extension_id\": \"org.vllm-hust.prefill-microflow\",\n  \"provider\": \"vllm\",\n  \"states\": [\n    \"installed\",\n    \"discovered\",\n    \"configured\",\n    \"enabled\",\n    \"degraded\"\n  ],\n  \"evidence\": [\n    \"host capability registry is unavailable; used legacy module probes\",\n    \"host version is unavailable; compatibility is unverified\",\n    \"host API 1.0 satisfies the declared range\",\n    \"protocol vllm.general-plugin is not independently versioned; compatibility is governed by host ranges and acceptance evidence\",\n    \"vLLM launch configuration can be rendered\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "action": "plan",
+      "exit_code": 0,
+      "stdout": "{\n  \"actions\": [\n    {\n      \"details\": {\n        \"enabled\": true\n      },\n      \"lifecycle_owner\": \"vllm\",\n      \"mutating\": false,\n      \"operation\": \"configure_launch\",\n      \"target\": \"vllm\"\n    }\n  ],\n  \"config_claims\": [\n    {\n      \"path\": [\n        \"environment\",\n        \"BETTERSCALE_PREFILL_MICROFLOW\"\n      ],\n      \"value\": \"1\"\n    },\n    {\n      \"path\": [\n        \"environment\",\n        \"HUST_PREFILL_MICROFLOW_ENABLED\"\n      ],\n      \"value\": \"1\"\n    },\n    {\n      \"path\": [\n        \"vllm_plugins\",\n        \"hust_prefill_microflow\"\n      ],\n      \"value\": true\n    }\n  ],\n  \"extension_id\": \"org.vllm-hust.prefill-microflow\",\n  \"generated_config\": {\n    \"additional_config\": {},\n    \"environment\": {\n      \"BETTERSCALE_PREFILL_MICROFLOW\": \"1\",\n      \"HUST_PREFILL_MICROFLOW_ENABLED\": \"1\"\n    },\n    \"native_extension_manifest\": {\n      \"bundle_id\": \"org.vllm-hust.prefill-microflow\",\n      \"bundle_version\": \"0.1.0.dev0\",\n      \"components\": [\n        {\n          \"component_id\": \"vllm-hust-prefill-microflow\",\n          \"contracts\": [\n            \"vllm.general-plugin.experimental\"\n          ],\n          \"execution_planes\": [\n            \"worker\"\n          ],\n          \"implementation_ref\": \"hust_prefill_microflow:register\",\n          \"isolation\": \"trusted_in_process\",\n          \"permissions\": []\n        }\n      ],\n      \"host_api_range\": \">=1,<2\",\n      \"schema_version\": \"1.0\"\n    },\n    \"user_config\": {},\n    \"vllm_json_options\": {},\n    \"vllm_plugins\": [\n      \"hust_prefill_microflow\"\n    ]\n  },\n  \"provider\": \"vllm\",\n  \"resource_claims\": [\n    {\n      \"mode\": \"exclusive\",\n      \"resource\": \"betterscale.qwen35.prefill-microflow-seam\",\n      \"scope\": \"vllm-process\"\n    },\n    {\n      \"mode\": \"exclusive\",\n      \"resource\": \"vllm.qwen35.fa-prefill-schedule\",\n      \"scope\": \"vllm-process\"\n    },\n    {\n      \"mode\": \"exclusive\",\n      \"resource\": \"vllm.qwen35.gdn-prefill-schedule\",\n      \"scope\": \"vllm-process\"\n    }\n  ],\n  \"warnings\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "action": "disable",
+      "exit_code": 0,
+      "stdout": "disabled org.vllm-hust.prefill-microflow\n",
+      "stderr": ""
+    },
+    {
+      "action": "forget",
+      "exit_code": 0,
+      "stdout": "forgot org.vllm-hust.prefill-microflow\n",
+      "stderr": ""
+    }
+  ],
+  "runtime_guard": {
+    "unknown_host_blocked": true,
+    "reason": "Missing qualified host distribution: vllm",
+    "no_runtime_imports": true
+  },
+  "new_models": 0,
+  "device_validation": false,
+  "whole_model_quality_or_cost_qualified": false,
+  "scope": "Installed-wheel discovery/validation, enable intent, degraded unknown-host status, plan and disable/forget; actual callback rejects unknown host without numerical imports. No model/run or live-device qualification.",
+  "observed_at": "2026-10-18T15:45:00.284194+08:00",
+  "manager_source_commit": "caa27b0ae7a5e6cde42d9a0417e3f0a5140a0423",
+  "normative_schema_sha256": "7688ba936eb6b362bc45263fbed3d659004b0f211c05c7f27c8dbeb394b17495",
+  "normative_schema_validation": true,
+  "pytest": {
+    "passed": 25,
+    "skipped": 0,
+    "failed": 0,
+    "cpu_torch": "2.14.1+cpu",
+    "numpy": "2.5.4",
+    "python": "3.12.14",
+    "platform": "Windows",
+    "matches_original_2_10_npu_stack": false
+  },
+  "prior_packaging_failures": [
+    {
+      "failure": "source-only child import before wheel installation lacked source PYTHONPATH",
+      "resolution": "explicit source subprocess path; installed wheel checked separately"
+    },
+    {
+      "failure": "Manager has no python -m vllm_hust_ext entrypoint",
+      "resolution": "invoke CLI main through isolated interpreter, documented console command checked"
+    },
+    {
+      "failure": "assumed unknown host check used nonzero exit",
+      "resolution": "check degraded state separately from actual callback failure; enable/plan remain intent only"
+    }
+  ],
+  "final_wheel": {
+    "filename": "vllm_hust_prefill_microflow-0.1.0.dev0-py3-none-any.whl",
+    "sha256": "2df4dcc81e329476e0f6333ad549e15974972710b3c556f9f65e8f84763d3a5f",
+    "installed_package_files_byte_identical": 18
+  }
+}

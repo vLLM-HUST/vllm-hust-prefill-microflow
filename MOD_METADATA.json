@@ -1,0 +1,48 @@
+{
+  "schema_version": "vllm-hust-mod-metadata-v1",
+  "mod_id": "prefill-microflow",
+  "repository": "vllm-hust-prefill-microflow",
+  "display_name": "Prefill Microflow (GDN + FA)",
+  "canonical_repository": "https://github.com/vLLM-HUST/vllm-hust-prefill-microflow",
+  "responsibility": {
+    "organization": "vLLM-HUST",
+    "maintainers": [
+      {
+        "name": "田景远 / jingyuan",
+        "github": "CubeLander"
+      }
+    ],
+    "advisors": [],
+    "advisor_status": "unknown"
+  },
+  "lifecycle": {
+    "default_enabled": false,
+    "status": "experimental",
+    "activation_contract": "ECPA Manifest 0.3 + exact donor source and host versions + explicit KKT/WU hashes + fresh worker and separate ON caches.",
+    "rollback_contract": "Disable bundle, use OFF cache arm, set BETTERSCALE_PREFILL_MICROFLOW=0 and restart workers."
+  },
+  "scope": {
+    "mechanism": "prefill_microflow",
+    "supported_workloads": [
+      "Qwen3.5-35B-A3B BF16 TP2 on explicitly pinned BetterScale shared Qwen35 host"
+    ],
+    "out_of_scope": [
+      "draft",
+      "MLP",
+      "cross-layer AllReduce",
+      "unmodified native vLLM",
+      "unqualified host/source revisions"
+    ]
+  },
+  "evidence": {
+    "index": "docs/qualification.md",
+    "latest_result": "docs/qualification.md",
+    "performance_claims": [],
+    "qualification": "unqualified"
+  },
+  "source": {
+    "repository": "https://github.com/vLLM-HUST/BetterScale",
+    "branch": "lumi/cache-transfer-profile",
+    "commit": "dcac3fa0ebe96cfaa443c0295458ad66822c319a"
+  }
+}

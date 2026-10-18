@@ -1,0 +1,267 @@
+{
+  "source_repository": "https://github.com/vLLM-HUST/BetterScale",
+  "source_branch": "lumi/cache-transfer-profile",
+  "source_commit": "dcac3fa0ebe96cfaa443c0295458ad66822c319a",
+  "source_authors": "BetterScale / Fletcher Tian and Lumi; preserved per-file upstream attributions",
+  "maintainer": {
+    "name": "田景远 / jingyuan",
+    "github": "CubeLander"
+  },
+  "files": [
+    {
+      "source_path": "src/betterscale/models/qwen35/microflow.py",
+      "source_sha256": "78e7d291de4e431e478991ecec273ab0a11d6e2206d1f02a1ed6ab0a1ecd1d26",
+      "extracted_path": "src/hust_prefill_microflow/runtime/microflow.py",
+      "extracted_sha256": "78e7d291de4e431e478991ecec273ab0a11d6e2206d1f02a1ed6ab0a1ecd1d26",
+      "changes": [
+        "package namespace only; numerical body unchanged"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/models/qwen35/microflow_attention.py",
+      "source_sha256": "889fc76cdeb85e70f84ba3f46272f9a840300f6665152936c754e85213f4b464",
+      "extracted_path": "src/hust_prefill_microflow/runtime/microflow_attention.py",
+      "extracted_sha256": "bd9f8c126a69384a0c6af597513a13fb5107dc71540e9d3da07ff45c98ff10f0",
+      "changes": [
+        "explicit qualified donor support import: rope_reuse"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/models/qwen35/microflow_gdn.py",
+      "source_sha256": "a261bd5bffd3c6a76a0790e1fab75871142e8fdba1e307435744f388ec542029",
+      "extracted_path": "src/hust_prefill_microflow/runtime/microflow_gdn.py",
+      "extracted_sha256": "7ed68d3dfa97207bc700b17205be1f6bad100ecd831a35b4584bbd76440842d3",
+      "changes": [
+        "explicit qualified donor support import: mixed_layout",
+        "explicit qualified donor support import: gdn_output",
+        "explicit qualified donor support import: preprocess",
+        "explicit qualified donor support import: decode_kv"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/models/qwen35/microflow_layout.py",
+      "source_sha256": "ad6ee28bb2f475cc9b6df51905650908421f73e46969adaf807228c8ad4903e4",
+      "extracted_path": "src/hust_prefill_microflow/runtime/microflow_layout.py",
+      "extracted_sha256": "ad6ee28bb2f475cc9b6df51905650908421f73e46969adaf807228c8ad4903e4",
+      "changes": [
+        "package namespace only; numerical body unchanged"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/models/qwen35/microflow_native.py",
+      "source_sha256": "44fef1d0d42e32a34919517fa7dad5a8b53356b2144aa19d7c81efa472982328",
+      "extracted_path": "src/hust_prefill_microflow/runtime/microflow_native.py",
+      "extracted_sha256": "3b955abb9bf63d246d841cddf5a64947421346bf8a2dfa3236f84fcf33c4a41b",
+      "changes": [
+        "require explicit native directory; never search a mother-package binary directory"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/models/qwen35/microflow_plan.py",
+      "source_sha256": "3fee04d8ab5ef2ee95ee0596f9099720623f473c0a94ae017976eb9fef93e96e",
+      "extracted_path": "src/hust_prefill_microflow/runtime/microflow_plan.py",
+      "extracted_sha256": "3fee04d8ab5ef2ee95ee0596f9099720623f473c0a94ae017976eb9fef93e96e",
+      "changes": [
+        "package namespace only; numerical body unchanged"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/models/qwen35/microflow_preprocess.py",
+      "source_sha256": "10ae161c08120a25d92c1912ffb58565b8fbc512317004fe6d798e672d708ae1",
+      "extracted_path": "src/hust_prefill_microflow/runtime/microflow_preprocess.py",
+      "extracted_sha256": "10ae161c08120a25d92c1912ffb58565b8fbc512317004fe6d798e672d708ae1",
+      "changes": [
+        "package namespace only; numerical body unchanged"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/models/qwen35/microflow_rope.py",
+      "source_sha256": "5fce33befe9ccf5fd20910d7dcb83e4ba86d4f42872623761151f0aad384c2e4",
+      "extracted_path": "src/hust_prefill_microflow/runtime/microflow_rope.py",
+      "extracted_sha256": "5fce33befe9ccf5fd20910d7dcb83e4ba86d4f42872623761151f0aad384c2e4",
+      "changes": [
+        "package namespace only; numerical body unchanged"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/models/qwen35/microflow_streams.py",
+      "source_sha256": "552faefe491cc588b55924df9979e15754d3e7b0522c768f5f75dc17524c6280",
+      "extracted_path": "src/hust_prefill_microflow/runtime/microflow_streams.py",
+      "extracted_sha256": "552faefe491cc588b55924df9979e15754d3e7b0522c768f5f75dc17524c6280",
+      "changes": [
+        "package namespace only; numerical body unchanged"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/models/qwen35/microflow_triangle.py",
+      "source_sha256": "27eb01c03f6bb2ff52f3a9089af238cb03dd18fceded1b71d15ef33f9485738e",
+      "extracted_path": "src/hust_prefill_microflow/runtime/microflow_triangle.py",
+      "extracted_sha256": "27eb01c03f6bb2ff52f3a9089af238cb03dd18fceded1b71d15ef33f9485738e",
+      "changes": [
+        "package namespace only; numerical body unchanged"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/patches/qwen_gdn/microflow_native/CMakeLists.txt",
+      "source_sha256": "417a2c77bb82083ef7378b7ccad3a5978ba0f73c2b09613385e4321d50d389b9",
+      "extracted_path": "native/CMakeLists.txt",
+      "extracted_sha256": "9cdd4b2d423e6a2936ab1dff53e4c1a118340c9a56189c0ec282821c11eea44e",
+      "changes": [
+        "source extracted; explicit build toolkit required"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/patches/qwen_gdn/microflow_native/README.md",
+      "source_sha256": "a2d32408395c2d7c102bede927ebd09fbb46b80baace18e17d9ee7170df9d062",
+      "extracted_path": "native/README.md",
+      "extracted_sha256": "9bb32a5bb2a465caa611b2b755deb3ee4a424ee2f9b797682b66da4080acca3b",
+      "changes": [
+        "independent native build source path and explicit CANN toolkit parameter; original numerical source unchanged"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/patches/qwen_gdn/microflow_native/block_mmad_pingpong_tla_multi.hpp",
+      "source_sha256": "753dde672bc6f2e1a317eef24ed190e8000ff9c4f1affff3ea03f78df91de42e",
+      "extracted_path": "native/block_mmad_pingpong_tla_multi.hpp",
+      "extracted_sha256": "753dde672bc6f2e1a317eef24ed190e8000ff9c4f1affff3ea03f78df91de42e",
+      "changes": [
+        "unmodified source"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/patches/qwen_gdn/microflow_native/kkt_kernel.hpp",
+      "source_sha256": "437fb762b727da4919d77e526836d290e8e9194b28dfc872a4d57d7baf7a53ed",
+      "extracted_path": "native/kkt_kernel.hpp",
+      "extracted_sha256": "437fb762b727da4919d77e526836d290e8e9194b28dfc872a4d57d7baf7a53ed",
+      "changes": [
+        "unmodified source"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/patches/qwen_gdn/microflow_native/kkt_varlen.cpp",
+      "source_sha256": "7f2c8886cdf87098074bbb135e8b35c110dfe37c72a050fda848dd199e64a4aa",
+      "extracted_path": "native/kkt_varlen.cpp",
+      "extracted_sha256": "7f2c8886cdf87098074bbb135e8b35c110dfe37c72a050fda848dd199e64a4aa",
+      "changes": [
+        "unmodified source"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/patches/qwen_gdn/microflow_native/wu2.cpp",
+      "source_sha256": "e38f9f4b4bccb4bae47a9b60d0a6fa9673bf594a901a440ba29d2aa24557ace3",
+      "extracted_path": "native/wu2.cpp",
+      "extracted_sha256": "e38f9f4b4bccb4bae47a9b60d0a6fa9673bf594a901a440ba29d2aa24557ace3",
+      "changes": [
+        "unmodified source"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/patches/qwen_gdn/microflow_native/wu_kernel.hpp",
+      "source_sha256": "782ea2ba32141a2d0d3f5261cbc302c8e92a5890109b940ecbd43d07ac36b7fc",
+      "extracted_path": "native/wu_kernel.hpp",
+      "extracted_sha256": "782ea2ba32141a2d0d3f5261cbc302c8e92a5890109b940ecbd43d07ac36b7fc",
+      "changes": [
+        "unmodified source"
+      ]
+    },
+    {
+      "source_path": "LICENSE",
+      "source_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "extracted_path": "LICENSE",
+      "extracted_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "changes": [
+        "unmodified license/attribution"
+      ]
+    },
+    {
+      "source_path": "THIRD_PARTY_NOTICES.md",
+      "source_sha256": "ac84889bc5d302433135ac4f80618ec1d1fbeb98140c2aed09fb287ec060cac5",
+      "extracted_path": "licenses/BetterScale-THIRD_PARTY_NOTICES.md",
+      "extracted_sha256": "ac84889bc5d302433135ac4f80618ec1d1fbeb98140c2aed09fb287ec060cac5",
+      "changes": [
+        "unmodified license/attribution"
+      ]
+    },
+    {
+      "source_path": "licenses/Apache-2.0.txt",
+      "source_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "extracted_path": "licenses/Apache-2.0.txt",
+      "extracted_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "changes": [
+        "unmodified license/attribution"
+      ]
+    },
+    {
+      "source_path": "licenses/CANN-1.0.txt",
+      "source_sha256": "09ad45632979f93be810f403d6d7d8a711963ccbf2bdcc3997548461acf50ef8",
+      "extracted_path": "licenses/CANN-1.0.txt",
+      "extracted_sha256": "09ad45632979f93be810f403d6d7d8a711963ccbf2bdcc3997548461acf50ef8",
+      "changes": [
+        "unmodified license/attribution"
+      ]
+    },
+    {
+      "source_path": "licenses/CANN-2.0.txt",
+      "source_sha256": "efb8bf1c0bcfa357c80fde0308349a3e44d16e04bb483873b5fbff0902c3684b",
+      "extracted_path": "licenses/CANN-2.0.txt",
+      "extracted_sha256": "efb8bf1c0bcfa357c80fde0308349a3e44d16e04bb483873b5fbff0902c3684b",
+      "changes": [
+        "unmodified license/attribution"
+      ]
+    },
+    {
+      "source_path": "licenses/FLA-MIT.txt",
+      "source_sha256": "1350bfbef13ce4d3d3bdaa2f1fc4b1d1117d846732a2a62f891a67f3d5356d0d",
+      "extracted_path": "licenses/FLA-MIT.txt",
+      "extracted_sha256": "1350bfbef13ce4d3d3bdaa2f1fc4b1d1117d846732a2a62f891a67f3d5356d0d",
+      "changes": [
+        "unmodified license/attribution"
+      ]
+    },
+    {
+      "source_path": "licenses/GDN-BSD-3-Clause.txt",
+      "source_sha256": "235818b37383373081b674876eff4b9518f3cd84bb6d1a54eafceeedaf4c39ea",
+      "extracted_path": "licenses/GDN-BSD-3-Clause.txt",
+      "extracted_sha256": "235818b37383373081b674876eff4b9518f3cd84bb6d1a54eafceeedaf4c39ea",
+      "changes": [
+        "unmodified license/attribution"
+      ]
+    },
+    {
+      "source_path": "tests/test_qwen35_microflow.py",
+      "source_sha256": "c038acb7ddc64949129c6dfd190f818aae11952930d37ad0d8d559bcba002072",
+      "extracted_path": "tests/test_qwen35_microflow.py",
+      "extracted_sha256": "bd902f17589b0487765beea8fe11225fa0b37eb54c7bc7e7e80acb8ab7cadbb7",
+      "changes": [
+        "independent namespace and fixture path; explicit optional CPU Torch skip"
+      ]
+    },
+    {
+      "source_path": "tests/test_qwen35_microflow_dynamic.py",
+      "source_sha256": "bbf00a9f43b6ff3f5e1956f6c0a0d29ae1a6ed6d509a212c0415e405e26ac33e",
+      "extracted_path": "tests/test_qwen35_microflow_dynamic.py",
+      "extracted_sha256": "fd78b2d6fd804f584d46bcb1f0ed68896df178134e9177652f05a4f13ac22374",
+      "changes": [
+        "independent namespace and fixture path; explicit optional CPU Torch skip"
+      ]
+    },
+    {
+      "source_path": "src/betterscale/models/qwen35/gdn_output.py",
+      "source_sha256": "b35adf0a87db2e81e8af3f2e013e38bd6b606b06d60d5893164247f2b74a04e7",
+      "extracted_path": "tests/fixtures/donor_gdn_output.py",
+      "extracted_sha256": "b35adf0a87db2e81e8af3f2e013e38bd6b606b06d60d5893164247f2b74a04e7",
+      "changes": [
+        "unmodified AST fixture, never installed as a runtime patch"
+      ]
+    },
+    {
+      "source_path": ".agents/skills/repo-knowledge/scenarios/diagnose-qwen35-serving-performance/prefill-microflow/README.md",
+      "source_sha256": "7c66fbf519202fc9df9a9dc75866ec921207859b52121046912e6cff0fcb31a8",
+      "extracted_path": "docs/upstream-handoff.md",
+      "extracted_sha256": "7c66fbf519202fc9df9a9dc75866ec921207859b52121046912e6cff0fcb31a8",
+      "changes": [
+        "unmodified upstream handoff; local evidence paths belong to source author"
+      ]
+    }
+  ]
+}

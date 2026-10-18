@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.3",
+  "extension_id": "org.vllm-hust.prefill-microflow",
+  "extension_version": "0.1.0.dev0",
+  "kind": "in_process_plugin",
+  "host": {
+    "provider": "vllm",
+    "name": "vllm",
+    "version_range": ">=0.25.1,<0.26",
+    "api_range": ">=1,<2"
+  },
+  "runtime": {
+    "type": "python",
+    "process_scope": "worker",
+    "isolation": "trusted_in_process"
+  },
+  "lifecycle_owner": "vllm",
+  "protocols": [
+    {
+      "name": "vllm.general-plugin",
+      "version_range": null
+    }
+  ],
+  "implementation": [
+    {
+      "type": "python_module",
+      "module": "hust_prefill_microflow",
+      "object": "register",
+      "status": "active"
+    }
+  ],
+  "requires_services": [],
+  "requires_extensions": [],
+  "resource_claims": [
+    {
+      "resource": "betterscale.qwen35.prefill-microflow-seam",
+      "scope": "vllm-process",
+      "mode": "exclusive"
+    },
+    {
+      "resource": "vllm.qwen35.fa-prefill-schedule",
+      "scope": "vllm-process",
+      "mode": "exclusive"
+    },
+    {
+      "resource": "vllm.qwen35.gdn-prefill-schedule",
+      "scope": "vllm-process",
+      "mode": "exclusive"
+    }
+  ],
+  "components": [
+    {
+      "component_id": "vllm-hust-prefill-microflow",
+      "contracts": [
+        "vllm.general-plugin.experimental"
+      ],
+      "execution_planes": [
+        "worker"
+      ],
+      "isolation": "trusted_in_process",
+      "implementation_ref": "hust_prefill_microflow:register",
+      "permissions": []
+    }
+  ],
+  "activation": {
+    "entry_points": [
+      {
+        "group": "vllm.general_plugins",
+        "name": "hust_prefill_microflow"
+      }
+    ],
+    "environment": {
+      "HUST_PREFILL_MICROFLOW_ENABLED": "1",
+      "BETTERSCALE_PREFILL_MICROFLOW": "1"
+    },
+    "additional_config": {}
+  }
+}

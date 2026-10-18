@@ -1,0 +1,17 @@
+name: CPU package and ECPA
+on: [push, pull_request]
+jobs:
+  cpu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install build pytest numpy jsonschema
+      - run: python -m pip install git+https://github.com/vLLM-HUST/extension-manager@caa27b0ae7a5e6cde42d9a0417e3f0a5140a0423
+      - run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m build
+      - run: python -m pip install --no-deps dist/*.whl
+      - run: python -m pytest -q
+      - run: python tools/clean_wheel_acceptance.py --output cpu-acceptance.json

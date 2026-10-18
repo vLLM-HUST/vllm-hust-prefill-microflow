@@ -1,0 +1,5 @@
+include provenance.json MOD_METADATA.json
+recursive-include native *.cpp *.hpp *.txt *.md
+recursive-include licenses *
+recursive-include docs *.md *.json
+recursive-include tests *.py
