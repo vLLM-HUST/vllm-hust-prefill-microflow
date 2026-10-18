@@ -1,5 +1,7 @@
 # Prefill Microflow：GDN + FA 预填充分片流水线
 
+**定位：BetterScale联合扩展MOD。** 独立拆仓和ECPA开关用于安装、维护、消融；正式比较固定BetterScale配置的Microflow OFF→ON增量收益，不要求脱离BetterScale独立运行。
+
 负责人：**jingyuan / 田景远（[@CubeLander](https://github.com/CubeLander)）**。
 
 从[BetterScale `lumi/cache-transfer-profile`](https://github.com/vLLM-HUST/BetterScale/tree/lumi/cache-transfer-profile)固定提交`dcac3fa0ebe96cfaa443c0295458ad66822c319a`拆出的独立源码、native构建与ECPA Manifest 0.3 MOD。**实验性、默认关闭；当前没有整模型质量/降本资格。**
