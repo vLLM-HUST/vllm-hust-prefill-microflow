@@ -54,3 +54,8 @@ def register():
     if os.environ.get("BETTERSCALE_PREFILL_MICROFLOW", "0") != "0":
         raise ValueError("Original Microflow and school FA adapter are exclusive")
     preflight()
+    # Keep the exact public worker name required by the school's State schema.
+    # Only the selected process's Python alias changes; installed files do not.
+    import betterscale.qwen35_worker as host
+    from .worker import Worker
+    host.Worker = Worker
