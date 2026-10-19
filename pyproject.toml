@@ -19,15 +19,18 @@ Source = "https://github.com/vLLM-HUST/BetterScale/tree/lumi/cache-transfer-prof
 
 [project.entry-points."vllm_hust.extension_bundles"]
 "org.vllm-hust.prefill-microflow" = "hust_prefill_microflow"
+"org.vllm-hust.prefill-microflow-school028-fa" = "hust_prefill_microflow.school028"
 
 [project.entry-points."vllm.general_plugins"]
 hust_prefill_microflow = "hust_prefill_microflow:register"
+hust_microflow_school028_fa = "hust_prefill_microflow.school028:register"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
 hust_prefill_microflow = ["*.json"]
+"hust_prefill_microflow.school028" = ["*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

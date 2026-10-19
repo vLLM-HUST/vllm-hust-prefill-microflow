@@ -23,6 +23,9 @@
 
 独立包自己的CPU/安装与Manager检查见[包装验收](docs/packaging-acceptance.json)，不继承上游45项为本包的新测试次数。[完整验收边界与待办](docs/qualification.md) · [来源与逐文件差异](provenance.json)。
 
+学校0.28宿主的独立实验Bundle见[FA分片适配](docs/school028-fa.md)。
+该适配只覆盖target全注意力层，不包含GDN移植，默认关闭；原Bundle的宿主限制不变。
+
 ## 安装与ECPA生命周期
 
 在隔离环境构建/安装本包；不要修改其他线程的已安装运行时：
