@@ -27,7 +27,8 @@ def admitted(layer, hidden):
     # Preserve its compiler-visible operator sequence, including small graphs.
     if getattr(layer, "_bs_microflow_key", "").startswith("mtp."):
         return False
-    if layer.layer_type != "full_attention" or layer.layer_scale:
+    if (layer.layer_type != "full_attention" or layer.layer_scale
+            or layer.use_attn_reduce_scatter_for_moe):
         return False
     attn = layer.self_attn
     return (
@@ -139,13 +140,13 @@ def layer_forward(layer, hidden_states, residual, positions):
 
 def install():
     from vllm.model_executor.models.qwen3_5 import Qwen3_5DecoderLayer as Layer
-    from vllm_ascend.patch.worker.patch_qwen3_5 import AscendQwen3_5DecoderLayer
+    from vllm.model_executor.models.qwen3_next import Qwen3NextDecoderLayer
     from vllm.utils.torch_utils import direct_register_custom_op
 
     if getattr(Layer, "_bs_microflow_installed", False):
         return
-    if Layer.forward is not AscendQwen3_5DecoderLayer.forward:
-        raise ValueError("Microflow requires the admitted Ascend decoder layer")
+    if Layer.forward is not Qwen3NextDecoderLayer.forward:
+        raise ValueError("School FA requires the pinned inherited decoder forward")
     direct_register_custom_op(
         op_name="betterscale_microflow_fa_prefix", op_func=_prefix_op,
         mutates_args=[], fake_impl=_prefix_fake,
