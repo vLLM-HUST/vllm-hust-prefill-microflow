@@ -11,6 +11,8 @@ def verify(root, run):
     receipt = json.loads((directory / "receipt.json").read_text())
     assert receipt["status"] == "measured"
     assert receipt["all_devices_released"]
+    assert all(e["phase"] == "starting" and e["time"] < receipt["bench_started_wall"]
+               for e in receipt.get("startup_foreign_context_observations", []))
     # Manager returns 130 after the controller's intentional SIGINT shutdown.
     assert receipt["child_exit_codes"] in ([0, 0], [0, 130])
     if receipt["child_exit_codes"][-1] == 130:
