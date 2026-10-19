@@ -20,6 +20,10 @@ def verify(root, run):
         assert "request processing complete; starting resource teardown" in log
     for name, digest in receipt["input_hashes"].items():
         assert hashlib.sha256((root / name).read_bytes()).hexdigest() == digest, name
+    if "microflow-cache-seed.json" in receipt["input_hashes"]:
+        cache = json.loads((directory / "compiler-cache-initialization.json").read_text())
+        assert cache["seed_manifest_sha256"] == receipt["input_hashes"]["microflow-cache-seed.json"]
+        assert cache["vllm_aot_cache"] == "fresh"
     raw = json.loads((directory / "mmlu-pro.json").read_text())
     assert raw["completed"] == 200 and raw["failed"] == 0
     assert raw["total_output_tokens"] == 51200
