@@ -28,6 +28,21 @@ ON/OFF使用独立编译缓存和新worker；同组比较须保留全部排队�
 清理后可能返回130；该值须与请求成功、drain记录和全部设备释放共同核验，不能单独视为成功。
 吞吐、TTFT和TPOT分别比较；未经多次匹配运行和任务质量预算验收，不升级完整MOD资格。
 
+## 2026-10-19配对筛选
+
+已完成三组独立OFF/ON，每轮原始MMLU-Pro 200请求、out256；1,200请求全部成功。
+两rank的同分片一致性、10个target FA层图捕获、请求阶段真实target重放、KV策略/引擎盐值对应及设备释放均已核验。
+模型身份由wrapper与target/draft对象的对应关系判定，不能用`use_eagle`区分二者。
+
+统计结果见[机器可复算汇总](school028-fa-screen-20261019.json)，采用三次统计量中位数和完整范围，不选择最高轮次。
+三组吞吐配对比值的几何平均为正，但相对既有吞吐B1的增量很小，不作统计显著性或跨工况收益声明。
+任务准确率未重新评分，完整GDN+FA任务质量资格仍未完成。
+
+两组使用同一份既有B1 Triton/Inductor缓存快照的独立副本，vLLM AOT缓存分别初始化。
+空编译缓存对照同样出现明显下降，故空缓存诊断不作为Microflow负优化结论，也不混入配对统计。
+完整请求、token时间、服务与设备日志、启动/退出及SHA256证据由
+[benchmark报告归档](https://github.com/vLLM-HUST/vllm-hust-benchmark/tree/main/reports/vllm-hust-midterm-20261019/microflow-school028)保存。
+
 回滚需停止该实例、通过Manager禁用新Bundle，再启动原worker。
 不支持在同一进程切换开关。完整GDN移植仍需发布双slab元数据和GDN output writer，
 不能仅放宽原宿主版本限制。
