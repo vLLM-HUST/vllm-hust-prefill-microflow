@@ -52,7 +52,8 @@ def verify(root, run):
         checks = [e for e in events if e["event"] == "partition_equivalence"]
         replays = [e for e in events if e["event"] == "graph_replay"
                    and receipt["bench_started_wall"] <= e["time"] <= receipt["bench_ended_wall"]
-                   and not e["draft"] and e["tokens"] in (1024, 2048, 4096, 8192)]
+                   and e.get("target") is True and not e["draft"]
+                   and e["tokens"] in (1024, 2048, 4096, 8192)]
         if active:
             assert {e["tokens"] for e in checks} == {1024, 2048, 4096}
             assert all(all(e["exact"]) for e in checks)

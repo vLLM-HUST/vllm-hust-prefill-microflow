@@ -67,6 +67,8 @@ class Worker(HostWorker):
         from vllm_ascend.compilation.acl_graph import ACLGraphWrapper
 
         original = ACLGraphWrapper.__call__
+        target_model = self.model_runner.model
+        draft_model = getattr(getattr(self.model_runner, "drafter", None), "model", None)
         if getattr(original, "_microflow_receipts", False):
             return
 
@@ -80,7 +82,9 @@ class Worker(HostWorker):
             result = original(wrapper, *args, **kwargs)
             if replay:
                 event("graph_replay", tokens=descriptor.num_tokens,
-                      draft=wrapper.use_eagle,
+                      target=wrapper is target_model,
+                      draft=wrapper is draft_model,
+                      speculative_enabled=wrapper.use_eagle,
                       active=os.environ["HUST_MICROFLOW_ARM"] == "on")
             return result
 
