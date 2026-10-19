@@ -22,6 +22,10 @@ ON/OFF使用独立编译缓存和新worker；同组比较须保留全部排队�
 并在请求窗口内记录对应shape的真实图重放。仅加载插件或仅捕获图均不算请求阶段生效。
 
 `tools/verify_school_run.py`核验运行来源、请求总数、token总数、控制记录与释放状态。
+与KV recompute组合时须由Manager同时启用
+`org.vllm-hust.kv-materialization-school028-recompute`，不能只增加插件导入名单。
+验收同时要求200个策略与引擎接收记录的salt摘要匹配。Manager在控制器主动SIGINT
+清理后可能返回130；该值须与请求成功、drain记录和全部设备释放共同核验，不能单独视为成功。
 吞吐、TTFT和TPOT分别比较；未经多次匹配运行和任务质量预算验收，不升级完整MOD资格。
 
 回滚需停止该实例、通过Manager禁用新Bundle，再启动原worker。
