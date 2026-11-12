@@ -12,8 +12,13 @@
         "github": "CubeLander"
       }
     ],
-    "advisors": [],
-    "advisor_status": "unknown"
+    "advisors": [
+      {
+        "name": "Shuhao Zhang / 张书豪",
+        "relationship": "internal"
+      }
+    ],
+    "advisor_status": "declared"
   },
   "lifecycle": {
     "default_enabled": false,
